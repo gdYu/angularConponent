@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name angularConponentApp
- * @description
- * # angularConponentApp
- *
- * Main module of the application.
- */
 angular
   .module('angularConponentApp', [
     'ngAnimate',
@@ -15,21 +7,17 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl',
-        controllerAs: 'main'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl',
-        controllerAs: 'about'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+    'ngTouch',
+    'ui.router',
+    'restangular',
+    'opui.form',
+    'ogui.form',
+    'conponent.service',
+    'conponent.directive',
+    'conponent.filter',
+    'conponent.controller',
+  ]);
+angular.module('conponent.service',[]);
+angular.module('conponent.directive',[]);
+angular.module('conponent.filter',[]);
+angular.module('conponent.controller',[]);

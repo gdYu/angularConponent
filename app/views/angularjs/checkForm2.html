@@ -1,0 +1,51 @@
+<div class="container margintop50">
+	<form class="form-horizontal" name="form" novalidate="novalidate">
+		<div class="form-group" style="text-align:center">
+			<h1>表单验证页面(弹框提示)</h1>
+		</div>
+		<div class="form-group" style="border-bottom:1px dashed;">
+			<h4>用户信息</h4>
+		</div>
+		<div class="form-group">
+			<label for="username" class="col-sm-2 control-label">用户名称</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="username" name="username" ng-model="username" placeholder="用户名称" op-validate required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="address" class="col-sm-2 control-label">家庭住址</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="address" name="address" placeholder="家庭住址" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="email" class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-10">
+				<input type="text" id="email" class="form-control" name="email" op-empty="false" ng-model="uer.email" op-pattern="email" op-msg="请输入正确的邮箱地址！" AUTOCOMPLETE="off" placeholder="请输入邮箱地址" op-validate required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="password" class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-10">
+				<input type="password" class="form-control" id="password" name="password" placeholder="Password" placeholder="请输入密码" required>
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">职业</label>
+			<div class="col-sm-10">
+				<select style="height: 34px;width: 100%;border-radius: 5px;">
+					<option>计算机软件</option>
+					<option>计算机硬件</option>
+					<option>教师</option>
+					<option>医生</option>
+				</select>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-12" style="text-align:center;">
+				<button type="button" class="btn btn-primary" op-save="submit()">submit</button>
+				<button type="reset" class="btn btn-warning">reset</button>
+			</div>
+		</div>
+	</form>
+</div>

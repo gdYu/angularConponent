@@ -1,0 +1,41 @@
+<div class="container margintop50">
+	<form class="form-horizontal" name="form" novalidate="novalidate">
+		<div class="form-group" style="text-align:center">
+			<h1>表单验证页面</h1>
+		</div>
+		<div class="form-group" style="border-bottom:1px dashed;">
+			<h4>用户信息</h4>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Email</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="email" og-pattern="^((([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6}\;))*(([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})))$" name="email" placeholder="请输入邮箱地址" required>
+			</div>
+			<div class="col-sm-offset-2 col-sm-10 collapse" id="emailTip" style="color:red;">
+		    请输入邮箱地址,例如：xxx@qq.com
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-2 control-label">Password</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" ng-model="password" name="password" og-pattern placeholder="Password" required>
+			</div>
+			<div class="col-sm-offset-2 col-sm-10 collapse" id="passwordTip" style="color:red;">
+		    请输入8位数以上密码！
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<div class="checkbox">
+					<label>
+						<input type="checkbox">Remember me</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<button type="button" class="btn btn-default" og-save="submit()">Sign in</button>
+			</div>
+		</div>
+	</form>
+</div>
