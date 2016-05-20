@@ -15,6 +15,7 @@ angular.module('conponent.controller')
   		}
   	});
 
+    //提交修改数据
     $scope.submit = function(){
     	checkFormService.commitForm($scope.supplier,function(result){
   			console.log(result.desc);
