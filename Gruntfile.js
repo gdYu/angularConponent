@@ -16,7 +16,8 @@ module.exports = function (grunt) {
   require('jit-grunt')(grunt, {
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
-    cdnify: 'grunt-google-cdn'
+    cdnify: 'grunt-google-cdn',
+    configureProxies:'grunt-connect-proxy'
   });
 
   // Configurable paths for the application
@@ -75,22 +76,28 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies:[{
+        context:['/socket.io','/angularConponent'],
+        host:'localhost',
+        port:3000
+      }],
       livereload: {
         options: {
           open: true,
-          middleware: function (connect) {
-            return [
-              connect.static('.tmp'),
-              connect().use(
-                '/bower_components',
-                connect.static('./bower_components')
-              ),
-              connect().use(
-                '/app/styles',
-                connect.static('./app/styles')
-              ),
-              connect.static(appConfig.app)
-            ];
+          base: [
+            '.tmp',
+            '<%= yeoman.app %>'
+          ],
+          middleware: function (connect,options) {
+            var middlewares = [require('grunt-connect-proxy/lib/utils').proxyRequest];
+            if(!Array.isArray(options.base)){
+              options.base = [options.base];
+            }
+            options.base.forEach(function(base){
+              middlewares.push(connect.static(base));
+            });
+            middlewares.push(connect().use('/bower_components',connect.static('./bower_components')));
+            return middlewares;
           }
         }
       },
@@ -469,6 +476,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'configureProxies',
       'postcss:server',
       'connect:livereload',
       'watch'

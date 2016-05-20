@@ -9,7 +9,7 @@ var http = require('http');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-var angulars = require('./routes/angular');
+var angulars = require('./routes/angulars');
 
 var app = express();
 app.set('port',3000);
@@ -24,9 +24,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(__dirname + '/public/images/favicon.ico'));
 
-app.use('/', routes);
-app.use('/users', users);
-app.use('/angulars',angulars);
+app.use('/angularConponent', routes);
+app.use('/angularConponent/users', users);
+app.use('/angularConponent/angulars',angulars);
 
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

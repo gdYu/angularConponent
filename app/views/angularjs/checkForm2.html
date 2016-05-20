@@ -7,44 +7,99 @@
 			<h4>用户信息</h4>
 		</div>
 		<div class="form-group">
-			<label for="username" class="col-sm-2 control-label">用户名称</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="username" name="username" ng-model="username" placeholder="用户名称" op-validate required>
+			<label for="supplierName" class="col-sm-2 control-label">供应商名称：</label>
+			<div class="col-sm-6">
+				<input type="text" class="form-control" id="supplierName" name="supplierName" ng-model="supplier.supplierName" placeholder="供应商名称" op-validate>
+			</div>
+			<label class="col-sm-2 control-label">级别：</label>
+			<div class="col-sm-2">
+				<select ng-model="supplier.level" class="form-control"> 
+	  			<option value="一般">一般</option>
+	  			<option value="重要">重要</option>
+	  			<option value="五星级">五星级</option>
+	  		</select>
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="address" class="col-sm-2 control-label">家庭住址</label>
-			<div class="col-sm-10">
-				<input type="text" class="form-control" id="address" name="address" placeholder="家庭住址" required>
+			<label for="supplierAbbreviate" class="col-sm-2 control-label">供应商简称：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="supplierAbbreviate" name="supplierAbbreviate" ng-model="supplier.supplierAbbreviate" placeholder="供应商简称" op-validate>
+			</div>
+			<label class="col-sm-2 control-label">合作方式：</label>
+			<div class="col-sm-2">
+				<select ng-model="supplier.cooperationWay" class="form-control"> 
+					<option value="天使投资">天使投资</option>
+	  			<option value="注资合作">注资合作</option>
+	  		</select>
+			</div>
+			<label class="col-sm-2 control-label">结算方式：</label>
+			<div class="col-sm-2">
+				<select ng-model="supplier.paymentWay" class="form-control"> 
+					<option value="按月分红">按月分红</option>
+	  			<option value="年底分红">年底分红</option>
+	  		</select>
+			</div>
+		</div>
+		<div class="form-group" style="border-bottom:1px dashed;">
+			<h4>联系人</h4>
+		</div>
+		<div class="form-group">
+			<label for="username" class="col-sm-2 control-label">姓名：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="username" name="username" ng-model="supplier.username" placeholder="联系人姓名" op-validate>
+			</div>
+			<label class="col-sm-2 control-label">性别：</label>
+			<div class="col-sm-2">
+				<select ng-model="supplier.sex" class="form-control"> 
+	  			<option value="男">男</option>
+	  			<option value="女">女</option>
+	  		</select>
+			</div>
+			<label class="col-sm-2 control-label">职务：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="position" name="position" ng-model="supplier.position" placeholder="职务" op-validate>
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="email" class="col-sm-2 control-label">Email</label>
-			<div class="col-sm-10">
-				<input type="text" id="email" class="form-control" name="email" op-empty="false" ng-model="uer.email" op-pattern="email" op-msg="请输入正确的邮箱地址！" AUTOCOMPLETE="off" placeholder="请输入邮箱地址" op-validate required>
+			<label for="phoneNumber" class="col-sm-2 control-label">联系电话：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="phoneNumber" name="phoneNumber" ng-model="supplier.phoneNumber" placeholder="联系电话" op-validate>
+			</div>
+			<label class="col-sm-2 control-label">email:</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="email" name="email" ng-model="supplier.email" placeholder="email" op-validate>
+			</div>
+			<label class="col-sm-2 control-label">传真：</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="fax" name="fax" ng-model="supplier.fax" placeholder="传真" op-validate>
 			</div>
 		</div>
 		<div class="form-group">
-			<label for="password" class="col-sm-2 control-label">Password</label>
-			<div class="col-sm-10">
-				<input type="password" class="form-control" id="password" name="password" placeholder="Password" placeholder="请输入密码" required>
+			<label for="phoneNumber" class="col-sm-2 control-label">QQ:</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="qq" name="qq" ng-model="supplier.qq" placeholder="QQ号" op-validate>
+			</div>
+			<label class="col-sm-2 control-label">旺旺:</label>
+			<div class="col-sm-2">
+				<input type="text" class="form-control" id="aliwangwang" name="aliwangwang" ng-model="supplier.aliwangwang" placeholder="阿里旺旺" op-validate>
 			</div>
 		</div>
 		<div class="form-group">
-			<label class="col-sm-2 control-label">职业</label>
+			<label for="address" class="col-sm-2 control-label">联系人地址:</label>
 			<div class="col-sm-10">
-				<select style="height: 34px;width: 100%;border-radius: 5px;">
-					<option>计算机软件</option>
-					<option>计算机硬件</option>
-					<option>教师</option>
-					<option>医生</option>
-				</select>
+				<input type="text" class="form-control" id="address" name="address" ng-model="supplier.address" placeholder="联系人地址" op-validate>
+			</div>
+		</div>
+		<div class="form-group">
+			<label for="remark" class="col-sm-2 control-label">备注:</label>
+			<div class="col-sm-10">
+				<input type="text" class="form-control" id="remark" name="remark" ng-model="supplier.remark" placeholder="备注" op-validate>
 			</div>
 		</div>
 		<div class="form-group">
 			<div class="col-sm-12" style="text-align:center;">
-				<button type="button" class="btn btn-primary" op-save="submit()">submit</button>
-				<button type="reset" class="btn btn-warning">reset</button>
+				<button type="button" class="btn btn-primary" op-save="submit()">保存</button>
+				<button type="reset" class="btn btn-warning">还原</button>
 			</div>
 		</div>
 	</form>
