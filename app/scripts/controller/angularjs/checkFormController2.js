@@ -21,4 +21,8 @@ angular.module('conponent.controller')
   			console.log(result.desc);
     	});
     };
+
+    $scope.showMsgs = function($event){
+      console.log($event.currentTarget);
+    };
   }]);
